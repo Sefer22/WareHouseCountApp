@@ -10,13 +10,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/inventory")
+@RequestMapping("/api")
 public class InventoryController {
 
 
     private InventoryService inventoryService;
 
-    @PostMapping("/count")
+    @PostMapping("inventory/count")
     public ResponseEntity<?> conductInventoryCount(@RequestBody InventoryCountDto countDto) {
         inventoryService.updateInventory(countDto);
         return ResponseEntity.ok("Inventory count updated successfully");

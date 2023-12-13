@@ -11,13 +11,13 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/reports")
+@RequestMapping("/api")
 public class ReportController {
 
     @Autowired
     private ReportService reportService;
 
-    @GetMapping("/stock-levels")
+    @GetMapping("reports/stock-levels")
     public ResponseEntity<?> getStockLevelsReport() {
         List<StockLevelDto> stockLevels = reportService.getStockLevels();
         return ResponseEntity.ok(stockLevels);

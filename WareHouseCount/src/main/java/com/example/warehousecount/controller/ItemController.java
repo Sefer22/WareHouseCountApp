@@ -10,15 +10,16 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/items")
+@RequestMapping("/api")
 public class ItemController {
 
 
     private ItemService itemService;
 
-    @PostMapping("/scan")
+    @PostMapping("items/scan")
     public ResponseEntity<?> scanBarcode(@RequestParam String barcode) {
         ItemDto item = itemService.scanBarcode(barcode);
         return ResponseEntity.ok(item);
     }
 }
+
